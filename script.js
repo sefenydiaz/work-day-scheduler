@@ -30,12 +30,11 @@ $(function () {
     // parse integer out of the string
     var timeBlockHour = parseInt($(this).attr("id").split('-')[1])
 
-    // var textAreaEl = JSON.parse($(this).attr("id").split('-')[0])
-    //localStorage.setItem(hourId, $(this).siblings("textarea")[0].value)
+    // this stores user input in local storage !!
     var hourId = document.getElementsByClassName(".time-block")
-    //localStorage.setItem(hourId, textAreaEl)
     localStorage.setItem(hourId, $(this).siblings("textarea")[0]);
     localStorage.getItem(hourId, $(this).siblings("textarea")[0]);
+    // need above textarea info to display on page and save upon refresh
 
     if (timeBlockHour > currentTime) {
       console.log('future')
