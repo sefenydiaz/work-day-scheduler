@@ -12,7 +12,7 @@ $(function () {
   saveBtn.on('click', function (event) {
     console.log($(this).siblings("textarea")[0].value);
     localStorage.setItem(event.target.closest("div").id, $(this).siblings("textarea")[0].value);
-    // still need to set text I think ?
+
 
   });
   // TODO: Add code to apply the past, present, or future class to each time
@@ -26,8 +26,17 @@ $(function () {
   console.log(currentTime)
   timeBlockEls.each(function () {
     console.log($(this))
+    // localStorage.setItem(timeBlockEls, $(this).siblings("textarea")[0].value);
     // parse integer out of the string
     var timeBlockHour = parseInt($(this).attr("id").split('-')[1])
+
+    // var textAreaEl = JSON.parse($(this).attr("id").split('-')[0])
+    //localStorage.setItem(hourId, $(this).siblings("textarea")[0].value)
+    var hourId = document.getElementsByClassName(".time-block")
+    //localStorage.setItem(hourId, textAreaEl)
+    localStorage.setItem(hourId, $(this).siblings("textarea")[0]);
+    localStorage.getItem(hourId, $(this).siblings("textarea")[0]);
+
     if (timeBlockHour > currentTime) {
       console.log('future')
       $(this).addClass("future")
@@ -46,19 +55,10 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
 
-  // hourEl.each(function() {
-  //   var differentHour = 
-  //   if(differentHour === 0) {
-  //     $(this).addClass("present");
-  //   } else if(differentHour < 0) {
-  //     $(this).addClass("past");
-  //   } else {
-  //     $(this).addClass("future");
-  //   }
-  // })
+
   // TODO: Add code to display the current date in the header of the page.
   function showCurrentDate() {
-    var currentDate = (dayjs().format('dddd MMMM DD YYYY'));
+    var currentDate = (dayjs().format('dddd MMMM DD, YYYY'));
     var currentDay = $("#currentDay");
     currentDay.text(currentDate);
   }
