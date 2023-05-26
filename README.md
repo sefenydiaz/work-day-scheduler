@@ -1,23 +1,23 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Work Day Scheduler
 
 ## About
 
 This webpage is powered by Day.js and jQuery to allow users to keep track of their work week!
 
 ## Installation
-******
+
+No installation required!
 
 ## User Story
 
-```md
+
 AS AN employee with a busy schedule
 I WANT to add important events to a daily planner
 SO THAT I can manage my time effectively
-```
 
 ## Acceptance Criteria
 
-```md
+
 GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner
 THEN the current day is displayed at the top of the calendar
@@ -31,12 +31,11 @@ WHEN I click the save button for that timeblock
 THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
-```
 
 ## Screenshot
 The following screenshot demonstrates the website's functionality:
-***** SCREENSHOT
+![scheduler screenshot](screenshot.png)
 
 ## Conclusion
 The following webpage can be viewed at:
-***** DEPLOYMENT LINK
+https://sefenydiaz.github.io/work-day-scheduler/
